@@ -16,28 +16,20 @@ def post_sports_news():
     feed = feedparser.parse("http://www.espn.com/espn/rss/news")
     if feed.entries:
         top = feed.entries[0]
-        message = f"📰 *{top.title}*
-{top.link}"
+        message = f"ðŸ“° *{top.title}*\n{top.link}"
         bot.send_message(chat_id=channel, text=message, parse_mode=ParseMode.MARKDOWN)
 
 def post_football_scores():
-    bot.send_message(chat_id=channel, text="⚽ Sample Football Score: Man City 2 - 1 Real Madrid")
+    bot.send_message(chat_id=channel, text="âš½ Sample Football Score: Man City 2 - 1 Real Madrid")
 
 def post_betting_odds():
     message = (
-        "💰 Betting Odds (Sample):
-
-"
-        "Match: PSG vs Bayern
-Odds: PSG 2.10 | Draw 3.50 | Bayern 3.00
-
-"
-        "Bet here:
-"
-        "[Stake](https://stake.com/?c=xjXOVUk8)
-"
-        "[1xBet](https://1xbet.ng?bf=63eac89802907_2136044107)
-"
+        "ðŸ’° Betting Odds (Sample):\n\n"
+        "Match: PSG vs Bayern\n"
+        "Odds: PSG 2.10 | Draw 3.50 | Bayern 3.00\n\n"
+        "Bet here:\n"
+        "[Stake](https://stake.com/?c=xjXOVUk8)\n"
+        "[1xBet](https://1xbet.ng?bf=63eac89802907_2136044107)\n"
         "[Paripesa](https://paripesa.ng?bf=6864326fd88bf_11377051151)"
     )
     bot.send_message(chat_id=channel, text=message, parse_mode=ParseMode.MARKDOWN)
